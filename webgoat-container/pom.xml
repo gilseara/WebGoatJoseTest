@@ -5,7 +5,7 @@
     <name>webgoat-container</name>
     <modelVersion>4.0.0</modelVersion>
     <artifactId>webgoat-container</artifactId>
-    <packaging>war</packaging>
+    <packaging>jar</packaging>
 
     <parent>
         <groupId>org.owasp.webgoat</groupId>
@@ -50,41 +50,41 @@
                     </resources>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-jar-plugin</artifactId>
-                <version>${maven-jar-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>create-jar</id>
-                        <phase>compile</phase>
-                        <goals>
-                            <goal>jar</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>build-helper-maven-plugin</artifactId>
-                <version>${build-helper-maven-plugin.version}</version>
-                <executions>
-                    <execution>
-                        <id>attach-artifacts</id>
-                        <phase>package</phase>
-                        <goals>
-                            <goal>attach-artifact</goal>
-                        </goals>
-                        <configuration>
-                            <artifacts>
-                                <artifact>
-                                    <file>${project.build.directory}/webgoat-container-${project.version}.jar</file>
-                                </artifact>
-                            </artifacts>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<plugin>-->
+                <!--<groupId>org.apache.maven.plugins</groupId>-->
+                <!--<artifactId>maven-jar-plugin</artifactId>-->
+                <!--<version>${maven-jar-plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>create-jar</id>-->
+                        <!--<phase>compile</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>jar</goal>-->
+                        <!--</goals>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
+            <!--<plugin>-->
+                <!--<groupId>org.codehaus.mojo</groupId>-->
+                <!--<artifactId>build-helper-maven-plugin</artifactId>-->
+                <!--<version>${build-helper-maven-plugin.version}</version>-->
+                <!--<executions>-->
+                    <!--<execution>-->
+                        <!--<id>attach-artifacts</id>-->
+                        <!--<phase>package</phase>-->
+                        <!--<goals>-->
+                            <!--<goal>attach-artifact</goal>-->
+                        <!--</goals>-->
+                        <!--<configuration>-->
+                            <!--<artifacts>-->
+                                <!--<artifact>-->
+                                    <!--<file>${project.build.directory}/webgoat-container-${project.version}.jar</file>-->
+                                <!--</artifact>-->
+                            <!--</artifacts>-->
+                        <!--</configuration>-->
+                    <!--</execution>-->
+                <!--</executions>-->
+            <!--</plugin>-->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-resources-plugin</artifactId>
@@ -114,27 +114,27 @@
                     <forkMode>never</forkMode>
                 </configuration>
             </plugin>
-            <plugin>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-maven-plugin</artifactId>
-                <configuration>
-                    <!-- See http://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-extract-specific-libraries-when-an-executable-jar-runs -->
-                    <requiresUnpack>
-                        <dependency>
-                            <groupId>org.thymeleaf.extra</groupId>
-                            <artifactId>thymeleaf-extras-springsecurity4</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.asciidoctor</groupId>
-                            <artifactId>asciidoctorj</artifactId>
-                        </dependency>
-                        <dependency>
-                            <groupId>org.jruby</groupId>
-                            <artifactId>jruby-complete</artifactId>
-                        </dependency>
-                    </requiresUnpack>
-                    <fork>true</fork>
-                </configuration>
+            <!--<plugin>-->
+                <!--<groupId>org.springframework.boot</groupId>-->
+                <!--<artifactId>spring-boot-maven-plugin</artifactId>-->
+                <!--<configuration>-->
+                    <!--&lt;!&ndash; See http://docs.spring.io/spring-boot/docs/current/reference/html/howto-build.html#howto-extract-specific-libraries-when-an-executable-jar-runs &ndash;&gt;-->
+                    <!--<requiresUnpack>-->
+                        <!--<dependency>-->
+                            <!--<groupId>org.thymeleaf.extra</groupId>-->
+                            <!--<artifactId>thymeleaf-extras-springsecurity4</artifactId>-->
+                        <!--</dependency>-->
+                        <!--<dependency>-->
+                            <!--<groupId>org.asciidoctor</groupId>-->
+                            <!--<artifactId>asciidoctorj</artifactId>-->
+                        <!--</dependency>-->
+                        <!--<dependency>-->
+                            <!--<groupId>org.jruby</groupId>-->
+                            <!--<artifactId>jruby-complete</artifactId>-->
+                        <!--</dependency>-->
+                    <!--</requiresUnpack>-->
+                    <!--<fork>true</fork>-->
+                <!--</configuration>-->
                 <!--<dependencies>-->
                 <!--<dependency>-->
                 <!--<groupId>org.springframework</groupId>-->
@@ -142,7 +142,7 @@
                 <!--<version>1.2.5.RELEASE</version>-->
                 <!--</dependency>-->
                 <!--</dependencies>-->
-            </plugin>
+            <!--</plugin>-->
             <plugin>
                 <artifactId>maven-clean-plugin</artifactId>
                 <configuration>
@@ -259,12 +259,6 @@
             <artifactId>docker-maven-plugin</artifactId>
             <version>0.4.10</version>
         </dependency>
-        
-		<dependency>
-			<groupId>com.thoughtworks.xstream</groupId>
-			<artifactId>xstream</artifactId>
-			<version>1.4.6</version>
-		</dependency>
 
         <!-- ************* END spring MVC and related dependencies ************** -->
         <!-- ************* START: Dependencies for Unit and Integration Testing ************** -->
