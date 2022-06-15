@@ -52,5 +52,5 @@ jobs:
           FOD_RELEASE_ID: ${{ secrets.FOD_RELEASE_ID }}
           FOD_URL: "https://ams.fortify.com/"
           FOD_API_URL: "https://api.ams.fortify.com/"
-          FOD_UPLOADER_OPTS: "-ep 1 -pp 0 -os"
+          FOD_UPLOADER_OPTS: "-ep 1 -pp 2 -os"
           FOD_UPLOADER_NOTES: 'Triggered by GitHub Actions (${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})'
