@@ -38,7 +38,7 @@ jobs:
       - name: Package Code + Dependencies
         run: scancentral package $PACKAGE_OPTS -o package.zip
         env:
-          PACKAGE_OPTS: "-bt none"
+          PACKAGE_OPTS: "-bt mvn -bf pom.xml"
       
       # Start Fortify on Demand SAST scan. Be sure to set secrets/variables for your desired configuration.
       - name: Download Fortify on Demand Universal CI Tool
